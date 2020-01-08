@@ -328,7 +328,7 @@ def log_softmax(x, dim, onnx_trace=False):
 
 def get_perplexity(loss):
     try:
-        return float('{:.2f}'.format(math.pow(2, loss)))
+        return float('{:.2f}'.format(math.exp(loss)))
     except OverflowError:
         return float('inf')
 
